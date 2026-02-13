@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Navin G S - Portfolio</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			line-height: 1.6;
+			color: #333;
+		}
+
+		header {
+			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			color: white;
+			padding: 1rem 0;
+			position: sticky;
+			top: 0;
+			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+		}
+
+		nav {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 0 2rem;
+		}
+
+		.logo {
+			font-size: 1.5rem;
+			font-weight: bold;
+		}
+
+		nav ul {
+			display: flex;
+			list-style: none;
+			gap: 2rem;
+		}
+
+		nav a {
+			color: white;
+			text-decoration: none;
+			transition: opacity 0.3s;
+		}
+
+		nav a:hover {
+			opacity: 0.8;
+		}
+
+		.hero {
+			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			color: white;
+			padding: 6rem 2rem;
+			text-align: center;
+		}
+
+		.hero-content {
+			max-width: 800px;
+			margin: 0 auto;
+		}
+
+		.hero h1 {
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+
+		.hero p {
+			font-size: 1.2rem;
+			margin-bottom: 2rem;
+		}
+
+		.btn {
+			display: inline-block;
+			background: white;
+			color: #667eea;
+			padding: 0.8rem 2rem;
+			border-radius: 5px;
+			text-decoration: none;
+			font-weight: bold;
+			transition: transform 0.3s, box-shadow 0.3s;
+		}
+
+		.btn:hover {
+			transform: translateY(-3px);
+			box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+		}
+
+		section {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 4rem 2rem;
+		}
+
+		h2 {
+			font-size: 2.5rem;
+			margin-bottom: 2rem;
+			text-align: center;
+			color: #667eea;
+		}
+
+		.about-content {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 2rem;
+			align-items: center;
+		}
+
+		.about-text p {
+			margin-bottom: 1rem;
+			line-height: 1.8;
+		}
+
+		.skills {
+			list-style: none;
+		}
+
+		.skills li {
+			padding: 0.5rem 0;
+			padding-left: 2rem;
+			position: relative;
+		}
+
+		.skills li:before {
+			content: "✓";
+			position: absolute;
+			left: 0;
+			color: #667eea;
+			font-weight: bold;
+		}
+
+		.projects-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			gap: 2rem;
+		}
+
+		.project-card {
+			background: #f4f4f4;
+			border-radius: 8px;
+			overflow: hidden;
+			box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+			transition: transform 0.3s;
+		}
+
+		.project-card:hover {
+			transform: translateY(-5px);
+		}
+
+		.project-image {
+			width: 100%;
+			height: 200px;
+			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: white;
+			font-size: 4rem;
+		}
+
+		.project-info {
+			padding: 1.5rem;
+		}
+
+		.project-info h3 {
+			margin-bottom: 0.5rem;
+			color: #667eea;
+		}
+
+		.project-info p {
+			color: #666;
+			margin-bottom: 1rem;
+		}
+
+		.project-link {
+			color: #667eea;
+			text-decoration: none;
+			font-weight: bold;
+		}
+
+		.project-link:hover {
+			text-decoration: underline;
+		}
+
+		.contact-section {
+			background: #f9f9f9;
+		}
+
+		.contact-content {
+			max-width: 600px;
+			margin: 0 auto;
+			text-align: center;
+		}
+
+		.contact-info {
+			display: flex;
+			justify-content: center;
+			gap: 2rem;
+			margin: 2rem 0;
+		}
+
+		.contact-info a {
+			color: #667eea;
+			text-decoration: none;
+			font-weight: bold;
+		}
+
+		.contact-info a:hover {
+			text-decoration: underline;
+		}
+
+		footer {
+			background: #333;
+			color: white;
+			text-align: center;
+			padding: 2rem;
+		}
+
+		@media (max-width: 768px) {
+			.hero h1 {
+				font-size: 2rem;
+			}
+
+			nav ul {
+				gap: 1rem;
+			}
+
+			.about-content {
+				grid-template-columns: 1fr;
+			}
+
+			h2 {
+				font-size: 1.8rem;
+			}
+		}
+	</style>
+</head>
+<body>
+	<!-- Navigation Header -->
+	<header>
+		<nav>
+			<div class="logo">Navin G S</div>
+			<ul>
+				<li><a href="#home">Home</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="#projects">Projects</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Hero Section -->
+	<section class="hero" id="home">
+		<div class="hero-content">
+			<h1>Hi, I'm Navin G S</h1>
+			<p>I'm a passionate developer creating beautiful and functional web experiences</p>
+			<a href="#projects" class="btn">View My Work</a>
+		</div>
+	</section>
+
+	<!-- About Section -->
+	<section id="about">
+		<h2>About Me</h2>
+		<div class="about-content">
+			<div class="about-text">
+				<p>Hello! I'm a web developer with a passion for creating responsive, user-friendly websites. I have experience in HTML, CSS, JavaScript, and various frameworks.</p>
+				<p>With a keen eye for design and a problem-solving mindset, I transform ideas into digital reality. I love learning new technologies and staying updated with industry trends.</p>
+			</div>
+			<div>
+				<h3>Skills</h3>
+				<ul class="skills">
+					<li>HTML &amp; CSS</li>
+					<li>JavaScript</li>
+					<li>Responsive Design</li>
+					<li>Web Development</li>
+					<li>Problem Solving</li>
+					<li>Team Collaboration</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<!-- Projects Section -->
+	<section id="projects">
+		<h2>My Projects</h2>
+		<div class="projects-grid">
+			<div class="project-card">
+				<div class="project-image">🎨</div>
+				<div class="project-info">
+					<h3>Project One</h3>
+					<p>A responsive website built with HTML, CSS, and JavaScript featuring modern design patterns.</p>
+					<a href="#" class="project-link">View Project →</a>
+				</div>
+			</div>
+
+			<div class="project-card">
+				<div class="project-image">💻</div>
+				<div class="project-info">
+					<h3>Project Two</h3>
+					<p>A dynamic web application with interactive features and smooth user experience.</p>
+					<a href="#" class="project-link">View Project →</a>
+				</div>
+			</div>
+
+			<div class="project-card">
+				<div class="project-image">🚀</div>
+				<div class="project-info">
+					<h3>Project Three</h3>
+					<p>An innovative project showcasing modern web technologies and best practices.</p>
+					<a href="#" class="project-link">View Project →</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Contact Section -->
+	<section class="contact-section" id="contact">
+		<div class="contact-content">
+			<h2>Get In Touch</h2>
+			<p>I'm always interested in hearing about new projects and opportunities. Feel free to reach out!</p>
+			<div class="contact-info">
+				<a href="mailto:your.email@example.com">Email</a>
+				<a href="https://linkedin.com" target="_blank">LinkedIn</a>
+				<a href="https://github.com" target="_blank">GitHub</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer>
+		<p>&copy; 2026 Navin G S. All rights reserved.</p>
+	</footer>
+</body>
+</html>
