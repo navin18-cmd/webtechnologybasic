@@ -115,97 +115,98 @@
     <script>
         // Sample products data
         const products = [
-            {
-                id: 1,
-                name: "Wireless Headphones",
-                price: 79.99,
-                originalPrice: 99.99,
-                category: "electronics",
-                rating: "⭐⭐⭐⭐⭐ (245)",
-                description: "Premium wireless headphones with noise cancellation",
-                emoji: "🎧"
-            },
-            {
-                id: 2,
-                name: "Smartphone",
-                price: 599.99,
-                originalPrice: 799.99,
-                category: "electronics",
-                rating: "⭐⭐⭐⭐⭐ (512)",
-                description: "Latest flagship smartphone with advanced features",
-                emoji: "📱"
-            },
-            {
-                id: 3,
-                name: "USB-C Cable",
-                price: 9.99,
-                originalPrice: 14.99,
-                category: "accessories",
-                rating: "⭐⭐⭐⭐ (180)",
-                description: "Durable fast-charging USB-C cable",
-                emoji: "🔌"
-            },
-            {
-                id: 4,
-                name: "Laptop Stand",
-                price: 34.99,
-                originalPrice: 49.99,
-                category: "accessories",
-                rating: "⭐⭐⭐⭐⭐ (320)",
-                description: "Ergonomic laptop stand for better posture",
-                emoji: "💻"
-            },
-            {
-                id: 5,
-                name: "Smartwatch",
-                price: 249.99,
-                originalPrice: 349.99,
-                category: "gadgets",
-                rating: "⭐⭐⭐⭐⭐ (410)",
-                description: "Feature-rich smartwatch with health tracking",
-                emoji: "⌚"
-            },
-            {
-                id: 6,
-                name: "Portable Charger",
-                price: 39.99,
-                originalPrice: 59.99,
-                category: "accessories",
-                rating: "⭐⭐⭐⭐ (290)",
-                description: "High-capacity portable power bank",
-                emoji: "🔋"
-            },
-            {
-                id: 7,
-                name: "Wireless Mouse",
-                price: 24.99,
-                originalPrice: 39.99,
-                category: "electronics",
-                rating: "⭐⭐⭐⭐⭐ (175)",
-                description: "Precision wireless mouse with long battery life",
-                emoji: "🖱️"
-            },
-            {
-                id: 8,
-                name: "Monitor Stand",
-                price: 44.99,
-                originalPrice: 64.99,
-                category: "accessories",
-                rating: "⭐⭐⭐⭐ (145)",
-                description: "Adjustable monitor stand with storage",
-                emoji: "📺"
-            },
-            {
-                id: 9,
-                name: "Drone",
-                price: 399.99,
-                originalPrice: 599.99,
-                category: "gadgets",
-                rating: "⭐⭐⭐⭐⭐ (220)",
-                description: "4K camera drone with 30-minute flight time",
-                emoji: "🚁"
-            }
-        ];
+    {
+        id: 1,
+        name: "Wireless Headphones",
+        price: 3999,
+        originalPrice: 4999,
+        category: "electronics",
+        rating: "⭐⭐⭐⭐⭐ (245)",
+        description: "Premium wireless headphones with noise cancellation",
+        emoji: "🎧"
+    },
+    {
+        id: 2,
+        name: "PS5 Console",
+        price: 60000,
+        originalPrice: 70000,
+        category: "gadgets",
+        rating: "⭐⭐⭐⭐⭐ (512)",
+        description: "Next-gen console with immersive gaming",
+        emoji: "🎮"
+    },
+    {
+        id: 3,
+        name: "Nike Shoes",
+        price: 12999,
+        originalPrice: 15999,
+        category: "accessories",
+        rating: "⭐⭐⭐⭐ (180)",
+        description: "Comfortable everyday sneakers",
+        emoji: "👟"
+    },
+    {
+        id: 4,
+        name: "Men Accessories",
+        price: 599,
+        originalPrice: 799,
+        category: "accessories",
+        rating: "⭐⭐⭐⭐⭐ (320)",
+        description: "Stylish everyday essentials",
+        emoji: "🧔"
+    },
+    {
+        id: 5,
+        name: "Alba Watch",
+        price: 29999,
+        originalPrice: 35999,
+        category: "gadgets",
+        rating: "⭐⭐⭐⭐⭐ (410)",
+        description: "Classic watch with modern styling",
+        emoji: "⌚"
+    },
+    {
+        id: 6,
+        name: "RC Car",
+        price: 7999,
+        originalPrice: 8999,
+        category: "accessories",
+        rating: "⭐⭐⭐⭐ (290)",
+        description: "Remote controlled speed racer",
+        emoji: "🚗"
+    },
+    {
+        id: 7,
+        name: "MRF Bat",
+        price: 14999,
+        originalPrice: 18999,
+        category: "electronics",
+        rating: "⭐⭐⭐⭐⭐ (175)",
+        description: "Premium cricket bat for pros",
+        emoji: "🏏"
+    },
+    {
+        id: 8,
+        name: "Racket",
+        price: 8999,
+        originalPrice: 10999,
+        category: "accessories",
+        rating: "⭐⭐⭐⭐ (145)",
+        description: "Lightweight racket for fast play",
+        emoji: "🏸"
+    },
+    {
+        id: 9,
+        name: "Plant Decor",
+        price: 399,
+        originalPrice: 599,
+        category: "gadgets",
+        rating: "⭐⭐⭐⭐⭐ (220)",
+        description: "Fresh look for your living space",
+        emoji: "🪴"
+    }
+];
+
 
         let cart = [];
         let currentFilter = 'all';
