@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EasyBuy E-Commerce</title>
+
+    <script>
+        function addToCart(product) {
+            alert(product + " added to cart!");
+        }
+
+        function showOffers() {
+            alert("20% OFF on Smartphones\nFree Delivery above ₹1000");
+        }
+
+        function submitForm() {
+            let name = document.getElementById("name").value;
+            alert("Thank you " + name + "! Form submitted.");
+            return false;
+        }
+    </script>
+</head>
+
+<body>
+
+<h1>EasyBuy</h1>
+<p>Your simple online shopping website</p>
+<hr>
+
+<h2>Products</h2>
+
+<h3>Smartphone</h3>
+<p>Price: ₹15,000</p>
+<button onclick="addToCart('Smartphone')">Add to Cart</button>
+
+<hr>
+
+<h3>Laptop</h3>
+<p>Price: ₹50,000</p>
+<button onclick="addToCart('Laptop')">Add to Cart</button>
+
+<hr>
+
+<h3>Headphones</h3>
+<p>Price: ₹2,000</p>
+<button onclick="addToCart('Headphones')">Add to Cart</button>
+
+<hr>
+
+<h2>Offers</h2>
+<button onclick="showOffers()">View Offers</button>
+
+<hr>
+
+<h2>Contact Us</h2>
+
+<form onsubmit="return submitForm()">
+    <input type="text" id="name" placeholder="Name" required><br><br>
+    <input type="email" placeholder="Email" required><br><br>
+
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
