@@ -1,61 +1,79 @@
-<?php ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>TechStore</title>
-
-    <style>
-        body { font-family: Arial; background:#f5f5f5; }
-        h1 { text-align:center; }
-
-        .grid {
-            display:grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-            gap:20px;
-            padding:20px;
-        }
-
-        .card {
-            background:white;
-            padding:15px;
-            border-radius:10px;
-            text-align:center;
-        }
-
-        img {
-            width:100%;
-            height:150px;
-            object-fit:cover;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore - Your Online Tech Shop</title>
+    <link rel="stylesheet" href="e-commerce.css">
 </head>
-
 <body>
 
-<h1>🛒 TechStore</h1>
+<header>
+    <nav>
+        <div class="logo">🛒 TechStore</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="add_product.php">Add Product</a></li>
+        </ul>
+    </nav>
+</header>
 
-<div class="grid" id="products"></div>
+<section class="hero" id="home">
+    <h1>Welcome to TechStore</h1>
+    <p>Dynamic Product Display using PHP & MySQL</p>
+</section>
 
-<script>
-fetch('get_products.php')
-.then(res => res.json())
-.then(data => {
+<section class="products-section" id="products">
+    <h2 class="products-title">Products</h2>
 
-    let html = "";
+    <div class="products-grid">
 
-    data.forEach(p => {
-        html += `
-        <div class="card">
-            <img src="images/${p.image}">
-            <h3>${p.name}</h3>
-            <p>${p.description}</p>
-            <p><b>₹${p.price}</b></p>
-        </div>`;
-    });
+    <?php
+    // DB CONNECTION
+    $conn = mysqli_connect(
+        "sql205.infinityfree.com",
+        "if0_41650060",
+        "gsnavin1234",
+        "if0_41650060_techstore"
+    );
 
-    document.getElementById("products").innerHTML = html;
-});
-</script>
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+    // FETCH DATA
+    $result = mysqli_query($conn, "SELECT * FROM products");
+
+    while($row = mysqli_fetch_assoc($result)) {
+    ?>
+
+        <div class="product-card">
+            <div class="product-image">🛍️</div>
+
+            <div class="product-info">
+                <div class="product-name">
+                    <?php echo $row['name']; ?>
+                </div>
+
+                <div class="product-description">
+                    <?php echo $row['description']; ?>
+                </div>
+
+                <div class="product-price">
+                    ₹<?php echo $row['price']; ?>
+                </div>
+            </div>
+        </div>
+
+    <?php } ?>
+
+    </div>
+</section>
+
+<footer>
+    <p style="text-align:center;">© 2026 TechStore</p>
+</footer>
 
 </body>
 </html>
