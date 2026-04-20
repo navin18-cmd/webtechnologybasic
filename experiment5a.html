@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic Calculator</title>
+</head>
+<body>
+
+<h2>Basic Calculator</h2>
+
+
+<div>
+    <input type="number" id="num1" placeholder="NUM 1">
+</div>
+
+<br>
+
+<div>
+    <input type="number" id="num2" placeholder="NUM 2">
+</div>
+
+<br>
+
+
+<button onclick="calculate('+')">+</button>
+<button onclick="calculate('-')">-</button>
+<button onclick="calculate('*')">*</button>
+<button onclick="calculate('/')">/</button>
+
+<h3>Result: <span id="result"></span></h3>
+
+<script>
+function calculate(operator) {
+    let a = Number(document.getElementById("num1").value);
+    let b = Number(document.getElementById("num2").value);
+    let result;
+
+    if (operator === "+") {
+        result = a + b;
+    } else if (operator === "-") {
+        result = a - b;
+    } else if (operator === "*") {
+        result = a * b;
+    } else if (operator === "/") {
+        result = a / b;
+    }
+
+    document.getElementById("result").innerText = result;
+}
+</script>
+
+</body>
+</html>
