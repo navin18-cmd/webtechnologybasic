@@ -3,10 +3,10 @@ declare(strict_types=1);
 
 session_start();
 
-$dbHost = "sql201.infinityfree.com";
-$dbUser = "YOUR_DB_USER";
+$dbHost = "sql102.infinityfree.com";
+$dbUser = "if0_41717156";
 $dbPass = "YOUR_DB_PASSWORD";
-$dbName = "YOUR_DB_NAME";
+$dbName = "if0_41717156_goaltracker";
 
 try {
     $pdo = new PDO(
