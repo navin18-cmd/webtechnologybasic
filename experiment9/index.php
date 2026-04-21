@@ -1,79 +1,93 @@
+<?php
+$conn = mysqli_connect(
+    "sql205.infinityfree.com",
+    "if0_41650060",
+    "gsnavin1234",
+    "if0_41650060_techstore"
+);
+
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechStore - Your Online Tech Shop</title>
-    <link rel="stylesheet" href="e-commerce.css">
+    <title>TechStore</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .emoji {
+            font-size: 60px;
+        }
+
+        .price {
+            color: green;
+            font-weight: bold;
+        }
+
+        .top-link {
+            text-align: center;
+            margin: 10px;
+        }
+    </style>
 </head>
+
 <body>
 
-<header>
-    <nav>
-        <div class="logo">🛒 TechStore</div>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#products">Products</a></li>
-            <li><a href="add_product.php">Add Product</a></li>
-        </ul>
-    </nav>
-</header>
+<h1>🛒 TechStore</h1>
 
-<section class="hero" id="home">
-    <h1>Welcome to TechStore</h1>
-    <p>Dynamic Product Display using PHP & MySQL</p>
-</section>
+<div class="top-link">
+    <a href="add_product.php">➕ Add Product</a>
+</div>
 
-<section class="products-section" id="products">
-    <h2 class="products-title">Products</h2>
+<div class="grid">
 
-    <div class="products-grid">
+<?php
+$result = mysqli_query($conn, "SELECT * FROM products");
 
-    <?php
-    // DB CONNECTION
-    $conn = mysqli_connect(
-        "sql205.infinityfree.com",
-        "if0_41650060",
-        "gsnavin1234",
-        "if0_41650060_techstore"
-    );
+while ($row = mysqli_fetch_assoc($result)) {
+?>
 
-    if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
+    <div class="card">
 
-    // FETCH DATA
-    $result = mysqli_query($conn, "SELECT * FROM products");
+        <div class="emoji">🛍️</div>
 
-    while($row = mysqli_fetch_assoc($result)) {
-    ?>
-
-        <div class="product-card">
-            <div class="product-image">🛍️</div>
-
-            <div class="product-info">
-                <div class="product-name">
-                    <?php echo $row['name']; ?>
-                </div>
-
-                <div class="product-description">
-                    <?php echo $row['description']; ?>
-                </div>
-
-                <div class="product-price">
-                    ₹<?php echo $row['price']; ?>
-                </div>
-            </div>
-        </div>
-
-    <?php } ?>
-
+        <h3><?php echo $row['name']; ?></h3>
+        <p><?php echo $row['description']; ?></p>
+        <p class="price">₹<?php echo $row['price']; ?></p>
     </div>
-</section>
 
-<footer>
-    <p style="text-align:center;">© 2026 TechStore</p>
-</footer>
+<?php
+}
+?>
+
+</div>
 
 </body>
 </html>
