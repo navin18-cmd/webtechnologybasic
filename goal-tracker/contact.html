@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Goal Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="contact">
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <header class="top-nav glass-card">
+        <h1>Goal Tracker</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="history.html">History</a>
+            <a href="about.html">About</a>
+            <a href="contact.html" class="active">Contact</a>
+        </nav>
+    </header>
+    <main class="container">
+        <section class="glass-card reveal">
+            <h2>Contact Us</h2>
+            <form id="contactForm" novalidate>
+                <div class="field">
+                    <label for="contactName">Name</label>
+                    <input type="text" id="contactName" required maxlength="80">
+                </div>
+                <div class="field">
+                    <label for="contactEmail">Email</label>
+                    <input type="email" id="contactEmail" required>
+                </div>
+                <div class="field">
+                    <label for="contactMessage">Message</label>
+                    <textarea id="contactMessage" rows="5" required maxlength="400"></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Send Message</button>
+                <p id="contactFeedback" class="small-text"></p>
+            </form>
+        </section>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+</html>

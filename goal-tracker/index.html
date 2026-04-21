@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goal Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="index">
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+
+    <header class="top-nav glass-card">
+        <h1>Goal Tracker</h1>
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="history.html">History</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html">Login</a>
+            <a href="signup.html">Sign Up</a>
+            <a href="php/logout.php">Logout</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero glass-card reveal">
+            <h2>Build daily momentum</h2>
+            <p class="tagline">Start one clear goal, show up every day, and grow your streak.</p>
+            <p id="userMessage" class="small-text"></p>
+        </section>
+
+        <section class="goal-setup glass-card reveal">
+            <h3>Start Goal</h3>
+            <form id="goalForm" novalidate>
+                <div class="field">
+                    <label for="goalName">Goal Name</label>
+                    <input type="text" id="goalName" name="goalName" placeholder="Example: Morning Workout" required maxlength="100">
+                </div>
+                <div class="field">
+                    <label for="goalDays">Number of Days</label>
+                    <input type="number" id="goalDays" name="goalDays" placeholder="Example: 30" required min="1" max="365">
+                </div>
+                <button type="submit" class="btn-primary">Start Goal</button>
+                <p class="form-error" id="goalFormError"></p>
+            </form>
+        </section>
+
+        <section class="dashboard glass-card reveal" id="dashboardSection">
+            <h3>Current Goal</h3>
+            <div class="progress-grid">
+                <div class="progress-ring-wrap">
+                    <svg class="progress-ring" width="170" height="170" viewBox="0 0 170 170" aria-label="Progress Circle">
+                        <circle class="ring-bg" cx="85" cy="85" r="70"></circle>
+                        <circle class="ring-progress" id="ringProgress" cx="85" cy="85" r="70"></circle>
+                    </svg>
+                    <div class="ring-center">
+                        <p id="progressPercent">0%</p>
+                    </div>
+                </div>
+                <div class="stats">
+                    <div class="stat-card">
+                        <p class="stat-title">Goal</p>
+                        <p id="currentGoalName">No active goal</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-title">Progress</p>
+                        <p><span id="currentDay">0</span> / <span id="totalDays">0</span> Days</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-title">Streak</p>
+                        <p><span id="streakCount">0</span> Days</p>
+                    </div>
+                    <div class="stat-card warning" id="missedNotice" hidden>
+                        <p class="stat-title">Missed Day</p>
+                        <p>You missed at least one day. Start again today.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="action-row">
+                <button id="markDoneBtn" class="btn-primary">Mark Today Done</button>
+                <p id="actionMessage" class="small-text"></p>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

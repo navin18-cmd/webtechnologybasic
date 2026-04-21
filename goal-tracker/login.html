@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Goal Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="login">
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <main class="center-wrap">
+        <section class="auth-card glass-card reveal">
+            <h1>Login</h1>
+            <p>Track your daily progress.</p>
+            <form id="loginForm" action="php/login.php" method="post" novalidate>
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="field">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required minlength="6">
+                </div>
+                <div class="field checkbox-field">
+                    <label><input type="checkbox" name="remember" value="1"> Remember me</label>
+                </div>
+                <button class="btn-primary" type="submit">Login</button>
+                <p id="loginError" class="form-error"></p>
+            </form>
+            <p class="small-text">No account? <a href="signup.html">Create one</a></p>
+        </section>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+</html>
